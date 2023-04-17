@@ -1,0 +1,64 @@
+<html>
+
+<FORM Name="myform">
+<table>
+<tr><th>Please Select Your Pizza</th><th>How many?</th></tr>
+<tr>
+<td>
+<SELECT NAME="memoryItem" onChange="calculatePrice()" id="memoryItem">
+  <OPTION value="0">Small Pizza
+  <OPTION value="7">Small Pizza $7 (No Toppings)</OPTION>
+  <OPTION value="9">1 Topping +$2</OPTION>
+  <OPTION value="10">2 Toppings +$3</OPTION>
+</SELECT>
+</td><td><input type="text" id="memoryItemQty" value="1" onChange="calculatePrice()" /></td></tr><tr><td>
+<SELECT NAME="hddItem" onChange="calculatePrice()" id="hddItem">
+  <OPTION value="0"> Medium Pizza</OPTION>
+  <OPTION value="10">Medium Pizza $10 (No Toppings)</OPTION>
+  <OPTION value="12">1 Topping +$2</OPTION>
+  <OPTION value="13">2 Toppings +$3</OPTION>
+</SELECT>
+</td><td><input type="text" id="hddItemQty" value="1" onChange="calculatePrice()" /></td></tr><tr><td>
+<SELECT NAME="networkItem" onChange="calculatePrice()" id="networkItem">
+  <OPTION value="0"> Large Pizza</OPTION>
+  <OPTION value="14"> Large Pizza $14 (No Toppings)</OPTION>
+  <OPTION value="16">1 Topping $2</OPTION>
+  <OPTION value="17">2 Toppings $3</OPTION>
+</SELECT>
+</td><td><input type="text" id="networkItemQty" value="1" onChange="calculatePrice()" /></td></tr>
+</tr>
+</table>
+</FORM>
+
+<button type="button" onclick="calculatePrice()">Calculate</button>
+Total:<INPUT type="text" id="PicExtPrice" Size=8>  
+
+  </html>
+        
+   <script>
+function calculatePrice(myform){
+
+  //selected data  
+  var elt = document.getElementById("memoryItem");
+  var memory = elt.options[elt.selectedIndex].value;
+  var memoryQty = parseInt(document.getElementById("memoryItemQty").value);
+
+  var elt = document.getElementById("hddItem");
+  var hdd = elt.options[elt.selectedIndex].value;
+  var hddQty = parseInt(document.getElementById("hddItemQty").value);
+
+  var elt = document.getElementById("networkItem");
+  var network = elt.options[elt.selectedIndex].value;
+  var networkQty = parseInt(document.getElementById("networkItemQty").value);
+
+  //convert data 
+  memory = parseInt(memory)*memoryQty;
+  hdd = parseInt(hdd)*hddQty;
+  network = parseInt(network)*networkQty;
+
+  //calculate total 
+  var total = memory+hdd+network; 
+
+  //print value 
+  document.getElementById("PicExtPrice").value=total; }
+</script>
