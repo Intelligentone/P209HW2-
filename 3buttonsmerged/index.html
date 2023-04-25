@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>3 Buttons</title>
+</head>
+
+<body>
+
+<h2>3 Buttons</h2>
+<label for ="B1"></label>
+  <input type="text" id="B1" name="B1"><br>
+  
+<label for ="B2"></label>
+  <input type="text" id="B2" name="B2"><br>
+ 
+<label for ="B3"></label>
+  <input type="text" id="B3" name="B3"><br>
+
+<button onclick ="squareInput()" id = "Square">Square</button>
+  
+<button id = "Cube">Cube</button>
+ 
+<button id = "Tothe4th">To The Fourth</button>
+
+</body>
+
+</html>
+
+<script>
+  
+  
+
+const origArray = [2, 3, 4];
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("B1").value = origArray[0];
+  document.getElementById("B2").value = origArray[1];
+  document.getElementById("B3").value = origArray[2];
+
+  document.getElementById("Square").addEventListener("click", function() {
+    const squareArray = origArray.map(function(num) {
+      return Math.pow(num, 2);
+    });
+    document.getElementById("B1").value = squareArray[0];
+    document.getElementById("B2").value = squareArray[1];
+    document.getElementById("B3").value = squareArray[2];
+  });
+  
+  document.getElementById("Cube").addEventListener("click", function() {
+    document.getElementById("B1").value = Math.pow(origArray[0], 3);
+    document.getElementById("B2").value = Math.pow(origArray[1], 3);
+    document.getElementById("B3").value = Math.pow(origArray[2], 3);
+  });
+  document.getElementById("Tothe4th").addEventListener("click", fourthPower);
+});
+
+function fourthPower() {
+  document.getElementById("B1").value = Math.pow(origArray[0], 4);
+  document.getElementById("B2").value = Math.pow(origArray[1], 4);
+  document.getElementById("B3").value = Math.pow(origArray[2], 4);
+}
+  
+</script>
+  
