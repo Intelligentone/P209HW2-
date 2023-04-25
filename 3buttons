@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>3 Buttons</title>
+</head>
+
+<body>
+
+<h2>3 Buttons</h2>
+<label for ="B1"></label>
+  <input type="text" id="B1" name="B1"><br>
+  
+<label for ="B2"></label>
+  <input type="text" id="B2" name="B2"><br>
+ 
+<label for ="B3"></label>
+  <input type="text" id="B3" name="B3"><br>
+
+<button onclick ="squareInput()" id = "Square">Square</button>
+  
+<button id = "Cube">Cube</button>
+  
+<button id = "Tothe4th">To The Fourth</button>
+
+
+  
+  <script src="script.js"></script>
+
+</body>
+
+</html>
